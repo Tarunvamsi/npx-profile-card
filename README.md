@@ -9,9 +9,9 @@ Welcome to my interactive CLI card! This CLI tool allows you to easily connect w
 - View a fancy CLI card with my contact information, skills, education, and projects.
 - Interactive and visually appealing terminal interface.
 
-## Installation
 
-You can install this CLI tool globally using npm:
+## To View Just open terminal and hit 👇
 
 ```bash
-npm install -g tarunvamsi-cli-card
+npx tarunvamsi                                         
+
