@@ -69,7 +69,7 @@ const questions = [
                 name: "Visit my LeetCode profile",
                 value: () => {
                     spinner.start();
-                    open("https://leetcode.com/CodingAce123");
+                    open("https://leetcode.com/Vamsik1643");
                     spinner.succeed("Done, see you on LeetCode.\n");
                 }
             },
@@ -84,14 +84,60 @@ const questions = [
 ];
 
 const data = {
-    name: chalk.bold.green("                        Pusarla Tarun Vamsi"),
-    handle: chalk.white("@CodingAce123"),
+    name: chalk.bold.green("                                             Pusarla Tarun Vamsi"),
     work: `${chalk.white("Aspiring")} ${chalk.hex("#f50a5c").bold("Software Developer")}`,
     linkedin: chalk.blue("https://linkedin.com/in/pusarla-tarun-vamsi"),
     github: chalk.white("https://github.com/Tarunvamsi"),
     twitter: chalk.cyan("https://x.com/Vamsik1643"),
-    discord: chalk.magenta("https://discord.com/channels/vamsi_pusarla"),
-    leetcode: chalk.yellow("https://leetcode.com/u/vamsik1643/"),
+    discord: chalk.magenta("https://discord.gg/4CpjK2vveY"),
+    leetcode: chalk.yellow("https://leetcode.com/Vamsik1643/"),
+    email: chalk.red("pusarlatarunvamsi@gmail.com"),
+    phone: chalk.red("8919188499"),
+    skills: [
+        {
+            category: chalk.white.bold("Technologies:"),
+            details: chalk.white("React.js, Tailwind CSS, Redux, TypeScript, WebSockets")
+        },
+        {
+            category: chalk.white.bold("Languages:"),
+            details: chalk.white("Python, Java, HTML, CSS, JavaScript, SQL")
+        },
+        {
+            category: chalk.white.bold("Tools:"),
+            details: chalk.white("Git, VS Code, XAMPP, Jira, Selenium, Sonarqube, Jenkins, Postman")
+        },
+        {
+            category: chalk.white.bold("Methodologies:"),
+            details: chalk.white("Agile, SDLC, STLC")
+        },
+        {
+            category: chalk.white.bold("Cloud:"),
+            details: chalk.white("AWS, Azure, GCP")
+        }
+    ],
+    education: [
+        {
+            institution: chalk.white.bold("Amrita Vishwa Vidyapeetham"),
+            degree: chalk.white("Bachelor of Technology in Computer Science"),
+            duration: chalk.white("2020-2024"),
+            location: chalk.white("Coimbatore, Tamil Nadu"),
+            gpa: chalk.white("GPA: 7.67/10.00")
+        },
+        {
+            institution: chalk.white.bold("Tirumala Junior College"),
+            degree: chalk.white("Intermediate (PCM)"),
+            duration: chalk.white("2018-2020"),
+            location: chalk.white("Rajahmundry, Andhra Pradesh"),
+            gpa: chalk.white("GPA: 9.88/10.00")
+        },
+        {
+            institution: chalk.white.bold("Tirumala English Medium High School"),
+            degree: chalk.white("SSC (10th Class)"),
+            duration: chalk.white("2017-2018"),
+            location: chalk.white("Rajahmundry, Andhra Pradesh"),
+            gpa: chalk.white("GPA: 10.00/10.00")
+        }
+    ],
     projects: [
         {
             name: chalk.red("Netflix Assist GPT"),
@@ -102,18 +148,24 @@ const data = {
             link: chalk.yellow("https://swiggy-vamsi.vercel.app/")
         }
     ],
-    labelWork: chalk.white.bold("                  Work:"),
+    labelWork: chalk.white.bold("                                     🚀"),
     labelLinkedIn: chalk.white.bold("   LinkedIn:"),
-    labelGitHub: chalk.white.bold("    GitHub:"),
-    labelTwitter: chalk.white.bold("   Twitter:"),
-    labelDiscord: chalk.white.bold("  Discord:"),
-    labelLeetCode: chalk.white.bold("  LeetCode:"),
+    labelGitHub: chalk.white.bold("     GitHub:"),
+    labelTwitter: chalk.white.bold("    Twitter:"),
+    labelDiscord: chalk.white.bold("    Discord:"),
+    labelLeetCode: chalk.white.bold("   LeetCode:"),
+    labelSkills: chalk.white.bold("     Skills:"),
+    labelEducation: chalk.white.bold("  Education:"),
     labelProjects: chalk.white.bold("   Projects:"),
     labelCard: chalk.white.bold("                           Card:")
 };
 
+const header = `${chalk.bgBlue.white("Namastey!")} ${' '.repeat(40)}${chalk.bgMagenta.black("Welcome!")} ${' '.repeat(40)}${chalk.bgRed.white("vanakkam !")}`;
+
 const me = boxen(
     [
+        header,
+        ``,
         `${data.name}`,
         ``,
         `${data.labelWork}  ${data.work}`,
@@ -123,6 +175,13 @@ const me = boxen(
         `${data.labelTwitter}   ${data.twitter}`,
         `${data.labelDiscord}   ${data.discord}`,
         `${data.labelLeetCode}   ${data.leetcode}`,
+        ``,
+        `${data.labelSkills}`,
+        ...data.skills.map(skill => `   - ${skill.category} ${skill.details}`),
+        ``,
+        `${data.labelEducation}`,
+        ...data.education.map(edu => `   - ${edu.institution}, ${edu.degree}, ${edu.duration}, ${edu.location}, ${edu.gpa}`),
+        ``,
         `${data.labelProjects}`,
         ...data.projects.map(project => `   - ${project.name}: ${project.link}`),
         ``,
@@ -147,10 +206,10 @@ const me = boxen(
             chalk.green("Whether you have a question or just want to say hi, I will get back to you!")
         )}`,
         `${chalk.italic(
-            chalk.redBright("Email me: ") + chalk.red("pusarlatarunvamsi@gmail.com")
+            chalk.redBright("Email me: ") + chalk.red(data.email)
         )}`,
         `${chalk.italic(
-            chalk.white("Phone: ") + chalk.red("8919188499")
+            chalk.white("Phone: ") + chalk.red(data.phone)
         )}`,
         `${chalk.italic(
             chalk.blue("Thanks for visiting!")
@@ -159,7 +218,7 @@ const me = boxen(
             chalk.magenta("See you again!")
         )}`,
         `${chalk.italic(
-            chalk.bgCyanBright("                              🚀 The only way to do great work is to love what you do                          ")
+            chalk.bgWhite("                              🚀 The only way to do great work is to love what you do                          ")
         )}`
     ].join("\n"),
     {
